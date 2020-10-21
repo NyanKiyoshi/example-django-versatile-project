@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+  <title>Wall Index</title>
+</head>
+<body>
+  <p>
+    <a href="/add">Add New Image</a>
+  </p>
+
+  <p>
+    {% if objects.count %}
+      {% for o in objects %}
+        <img src="{{ o.image.crop.400x400 }}" />
+      {% endfor %}
+    {% else %}
+      No images.
+    {% endif %}
+  </p>
+</body>
+</html>
